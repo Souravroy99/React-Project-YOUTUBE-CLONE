@@ -9,8 +9,7 @@ import moment from "moment";
 import { useParams } from "react-router-dom";
 
 const PlayVideo = () => {
-
-  const {videoId} = useParams()  
+  const { videoId } = useParams();
   const [apiData, setApiData] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [commentData, setCommentData] = useState([]);
@@ -47,8 +46,7 @@ const PlayVideo = () => {
       <iframe
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
+        allowFullScreen
       ></iframe>
 
       <h3>{apiData ? apiData.snippet.title : "No Title"}</h3>
@@ -110,17 +108,23 @@ const PlayVideo = () => {
         {commentData.map((item, idx) => {
           return (
             <div key={idx} className="comment">
-              <img src={item.snippet.topLevelComment.snippet.authorProfileImageUrl} alt="" />
+              <img
+                src={item.snippet.topLevelComment.snippet.authorProfileImageUrl}
+                alt=""
+              />
               <div>
                 <h3>
-                  {item.snippet.topLevelComment.snippet.authorDisplayName}<span>1 day ago</span>
+                  {item.snippet.topLevelComment.snippet.authorDisplayName}
+                  <span>1 day ago</span>
                 </h3>
-                <p>
-                  {item.snippet.topLevelComment.snippet.textDisplay}
-                </p>
+                <p>{item.snippet.topLevelComment.snippet.textDisplay}</p>
                 <div className="comment_action">
                   <img src={like} alt="" />
-                  <span>{value_converter(item.snippet.topLevelComment.snippet.likeCount)}</span>
+                  <span>
+                    {value_converter(
+                      item.snippet.topLevelComment.snippet.likeCount
+                    )}
+                  </span>
                   <img src={dislike} alt="" />
                 </div>
               </div>

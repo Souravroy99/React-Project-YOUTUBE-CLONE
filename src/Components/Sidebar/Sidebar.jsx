@@ -14,7 +14,7 @@ import jack from "../../assets/jack.png";
 import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
-
+ 
 const Sidebar = ({sidebar, category, setCategory}) => {
   return (
     <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
@@ -57,7 +57,7 @@ const Sidebar = ({sidebar, category, setCategory}) => {
           <img src={tom} alt="" /><p>Justin Bieber</p>
         </div>
         <div className="side-links">
-          <img src={simon} alt="" /><p>Mr Beast</p>
+          <img src={simon} alt="" /><p>MrBeast</p>
         </div>
         <div className="side-links">
           <img src={megan} alt="" /><p>5-minute Crafts</p>
